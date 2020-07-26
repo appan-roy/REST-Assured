@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="25197" started-at="2020-07-19T19:49:06 IST" finished-at="2020-07-19T19:49:31 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="25197" started-at="2020-07-19T19:49:06 IST" finished-at="2020-07-19T19:49:31 IST">
+      <class name="countryInfoService.CountryFlag">
+        <test-method status="PASS" signature="getCountryFlagImage()[pri:0, instance:countryInfoService.CountryFlag@4493d195]" name="getCountryFlagImage" duration-ms="25054" started-at="2020-07-19T19:49:06 IST" finished-at="2020-07-19T19:49:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCountryFlagImage -->
+      </class> <!-- countryInfoService.CountryFlag -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

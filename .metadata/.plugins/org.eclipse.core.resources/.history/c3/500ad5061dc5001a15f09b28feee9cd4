@@ -1,0 +1,9 @@
+package countryInfoServices;
+
+public class GetCountries {
+
+	String req = "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL";
+	
+	
+	
+}

@@ -1,0 +1,26 @@
+package chaining;
+
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.*;
+
+public class APIChaining {
+	
+	@Test
+	public void getUsers() {
+		
+		baseURI = "http://localhost:3000/";
+		
+		basePath = "/users";
+		
+		Response res = given().contentType(ContentType.JSON).log().all().get("/20");
+		
+		String fname = res.then().extract().path("firstName");
+		
+		System.out.println("The firstname is "+fname);
+		
+	}
+	
+}

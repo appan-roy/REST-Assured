@@ -1,0 +1,20 @@
+package simplePayload;
+
+import org.testng.annotations.Test;
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class DeSerialization {
+
+    @Test
+    public void JSON_to_POJO() {
+
+    	baseURI = "http://localhost:3000";
+    	
+    	Users user = RestAssured.get("/users/26").as(Users.class);
+
+        System.out.println(user.toString());
+        
+    }
+
+}

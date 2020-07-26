@@ -1,0 +1,68 @@
+package jsonParsing;
+
+import java.util.List;
+
+import org.testng.annotations.Test;
+import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.*;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class ParseJsonResponse {
+
+    @Test
+    public void testJsonParsing() {
+        
+    	baseURI = "http://dummy.restapiexample.com/api/v1";
+        
+    	Response response = null;
+
+        try {
+            response = 	given()
+            			.when()
+            				.get("/employees");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Response :" + response.asString());
+        
+        System.out.println("Status Code :" + response.getStatusCode());
+        
+        // Creation of JsonPath object
+        JsonPath jp = new JsonPath(response.asString());
+        
+        // Count Number of Records(Employees) in the Response
+        String empCount = jp.get("data.size()").toString();
+        System.out.println("Total number of employee is "+empCount);
+        
+        // Validate Number of Records(Employees) in the Response
+        expect().body("data", hasSize(24)).when().get("/employees");
+        
+        // Print all of the employee names
+        String empName = jp.getString("data.employee_name");
+        System.out.println("The employee name is "+empName);
+
+        
+        
+        
+        
+        
+//        //5. To get the name of the sixth employee in the list using 2 ways:
+//        //1. 
+//        String sixthEmployeeName = jsonPathValidator.getString("employee_name[5]");
+//        System.out.println(sixthEmployeeName);
+//        //2.
+//        System.out.println(allEmployeeNames.get(5));
+//
+//
+//        //6. To validate if the 10th employee salary is greater than 100
+//        if (Integer.parseInt(jsonPathValidator.getString("employee_salary[9]")) > 100) {
+//            System.out.println("True - 10th employee salary is " + jsonPathValidator.getString("employee_salary[9]") + " which is greater than 100");
+//        } else {
+//            System.out.println("False - 10th employee salary is " + jsonPathValidator.getString("employee_salary[9]") + " which is lesser than 100");
+//        }
+
+    }
+    
+}

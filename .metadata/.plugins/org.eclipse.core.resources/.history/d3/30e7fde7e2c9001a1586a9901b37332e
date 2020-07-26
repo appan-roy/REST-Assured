@@ -1,0 +1,59 @@
+package simplePayload;
+
+
+public class Users {
+
+	String firstName;
+	String lastName;
+	int fideRating;
+	int id;
+	 
+	
+
+	public Users(String firstName, String lastName, int fideRating) {
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.fideRating=fideRating;
+	}
+	 
+	Users(){
+		
+	}
+	
+	public String getfirstName() {
+		return firstName;
+	}
+	 
+	public void setfirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	 
+	public String getlastName() {
+		return lastName;
+	}
+	 
+	public void setlastName(String lastName) {
+		this.lastName = lastName;
+	}
+	 
+	public Integer getfideRating() {
+		return fideRating;
+	}
+	 
+	public void setfideRating(Integer fideRating) {
+		this.fideRating = fideRating;
+	}
+	 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String toString(){
+    	return "The user's first name is " + this.firstName + " and last name is " + this.lastName + " and fide rating is " + this.fideRating; 
+    }
+
+}

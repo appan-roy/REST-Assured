@@ -1,0 +1,33 @@
+package nasaAPI;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+
+public class APOD {
+
+	static String apiKey = "cQQBex9htxH1fieiwmiH9ZtY7iGgLY2k97uTS54p";
+	
+	@Test
+	public void testChickensFeed() {
+		
+		baseURI = "http://coop.apps.symfonycasts.com";
+		
+		Response res = null;
+		
+		res = given().auth().oauth2(accessToken).post("/api/"+userId+"/chickens-feed");
+		
+		Assert.assertEquals(res.getStatusCode(), 200);
+		
+		Assert.assertEquals(res.getBody().jsonPath().get("action"), "chickens-feed");
+		
+		System.out.println("Response Status Code: "+res.getStatusCode());
+		
+		System.out.println("Response Body: "+res.getBody().jsonPath().prettify());
+		
+	}
+	
+}

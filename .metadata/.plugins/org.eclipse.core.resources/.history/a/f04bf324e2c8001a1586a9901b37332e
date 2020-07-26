@@ -1,0 +1,54 @@
+package parameterization;
+
+import static io.restassured.RestAssured.*;
+import io.restassured.path.xml.XmlPath;
+import io.restassured.response.Response;
+import org.testng.annotations.Test;
+
+
+public class CapitalCity {
+
+	static String projDir = System.getProperty("user.dir");
+	
+	static String xmlPath = projDir+"/SOAP XML Files/Chaining/CapitalCity.xml";
+	
+	@Test
+	public void getCapitalCity() throws Exception {
+		
+		baseURI = "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL";
+		
+		String countryCode = "IN";
+		
+		String requestBody =
+				 
+	 	"<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n" +
+	 			"<Body>\r\n" +
+	 				"<CapitalCity xmlns=\"http://www.oorsprong.org/websamples.countryinfo\">\r\n" +
+	 					"<sCountryISOCode>"+countryCode+"</sCountryISOCode>\r\n" +
+	 				"</CapitalCity>\r\n" +
+	 			"</Body>\r\n" +
+        "</Envelope>";
+		
+		
+		Response res =
+				
+				given()
+					.header("Content-Type", "text/xml")
+					.and()
+					.body(requestBody).
+				when()
+					.post().
+				then()
+					.statusCode(200)
+					.log().all()
+					.extract().response();
+		
+		XmlPath xml = new XmlPath(res.asString());
+		
+		String capital = xml.getString("CapitalCityResult");
+		
+		System.out.println("The capital city of the country is "+capital);
+		
+	}
+
+}

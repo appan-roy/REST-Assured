@@ -1,0 +1,17 @@
+1595149451461	Move compilation unit
+1595149466528	Rename type 'GetRequestWithQueryParameters'
+1595153236391	Rename package 'authorization'
+1595155575591	Copy compilation unit
+1595157554402	Delete element
+1595159920851	Copy compilation unit
+1595159939186	Rename type 'OAuth2_AuthDemo'
+1595160907149	Copy compilation unit
+1595165418188	Copy compilation unit
+1595165866555	Delete element
+1595174402259	Delete element
+1595174443537	Rename package 'serialization'
+1595175924418	Rename type 'TestDeSerialization'
+1595176173584	Rename package 'payload'
+1595179789743	Copy package
+1595179883903	Delete element
+1595179955316	Rename package 'payloads'

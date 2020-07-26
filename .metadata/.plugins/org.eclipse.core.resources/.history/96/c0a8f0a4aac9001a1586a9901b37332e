@@ -1,0 +1,29 @@
+package authentication;
+
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+
+public class OAuth2 {
+
+	static String accessToken = "";
+	
+	static int userId = 1198;
+	
+	
+	@Test
+	public void testOAuth2() {
+		
+		baseURI = "http://coop.apps.symfonycasts.com";
+		
+		Response res = null;
+		
+		res = given().auth().oauth2(accessToken).post("	/api/"+userId+"/chickens-feed");
+		
+	}
+	
+	
+	
+}

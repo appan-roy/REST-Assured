@@ -1,0 +1,19 @@
+package utility;
+
+import org.testng.annotations.DataProvider;
+
+public class Data_Provider {
+	
+	@DataProvider(name="Data for POST 2")
+	public Object [][] dataPost2() {
+		
+		return new Object[][] {
+			
+			{"Judit", "Polgar", 2747},
+			{"Frank", "Marshall", 2723}
+			
+		};
+		
+	}
+	
+}

@@ -1,0 +1,19 @@
+package complexPayload;
+
+public class Issuetype {
+
+	String Issuetype;
+	
+	public Issuetype(String issuetype) {
+		this.Issuetype = issuetype;
+	}
+
+	public String getIssuetype() {
+		return Issuetype;
+	}
+
+	public void setIssuetype(String issuetype) {
+		Issuetype = issuetype;
+	}
+	
+}

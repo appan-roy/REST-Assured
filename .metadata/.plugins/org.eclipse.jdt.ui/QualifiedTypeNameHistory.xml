@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+<fullyQualifiedTypeName name="org.testng.annotations.DataProvider"/>
+<fullyQualifiedTypeName name="dataProvider.LocalAPIData"/>
+<fullyQualifiedTypeName name="org.testng.annotations.Parameters"/>
+<fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFWorkbook"/>
+<fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFSheet"/>
+<fullyQualifiedTypeName name="org.apache.poi.xssf.eventusermodel.XSSFSheetXMLHandler"/>
+<fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.DataFormatter"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="org.apache.poi.util.IOUtils"/>
+<fullyQualifiedTypeName name="io.restassured.internal.util.IOUtils"/>
+<fullyQualifiedTypeName name="org.apache.commons.compress.utils.IOUtils"/>
+<fullyQualifiedTypeName name="org.apache.commons.io.IOUtils"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+<fullyQualifiedTypeName name="groovy.xml.XmlSlurper"/>
+<fullyQualifiedTypeName name="io.restassured.path.xml.XmlPath"/>
+<fullyQualifiedTypeName name="groovy.util.XmlSlurper"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="io.restassured.http.ContentType"/>
+<fullyQualifiedTypeName name="utility.Excel_Utils"/>
+<fullyQualifiedTypeName name="utility.Data_Provider"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.annotation.JsonDeserialize"/>
+<fullyQualifiedTypeName name="serialization.Users"/>
+<fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+<fullyQualifiedTypeName name="io.restassured.RestAssured"/>
+<fullyQualifiedTypeName name="io.restassured.response.Response"/>
+<fullyQualifiedTypeName name="org.testng.Assert"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="complexPayload.Issuetype"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+<fullyQualifiedTypeName name="complexPayload.Project"/>
+<fullyQualifiedTypeName name="complexPayload.Payload"/>
+</qualifiedTypeNameHistroy>

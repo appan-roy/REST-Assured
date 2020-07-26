@@ -1,0 +1,26 @@
+package authorization;
+
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+
+import static io.restassured.RestAssured.*;
+
+public class NASA_APOD {
+
+	@Test
+	public void testAPOD() {
+		
+		baseURI = "https://api.nasa.gov/";
+		
+		ValidatableResponse res = 	given()
+							.pathParam("api_key", "cQQBex9htxH1fieiwmiH9ZtY7iGgLY2k97uTS54p").
+						when()
+							.get("planetary/apod?").
+						then()
+							.statusCode(200);
+
+	}
+	
+}

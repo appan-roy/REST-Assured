@@ -1,0 +1,64 @@
+package nasaAPI;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.*;
+
+import java.util.Date;
+
+public class MarsRover {
+
+	static String apiKey = "cQQBex9htxH1fieiwmiH9ZtY7iGgLY2k97uTS54p";
+	
+	String camera = "fhaz";		// FHAZ/RHAZ = Front/Rear Hazard Avoidance Camera
+	
+	int sol = 10;
+	
+	int page =1;
+	
+	static String projDir = System.getProperty("user.dir");
+	
+	static String driverPath = projDir+"/Drivers/chromedriver.exe";
+	
+	@Test
+	public void testAsteroids() throws Exception {
+		
+		System.setProperty("webdriver.chrome.driver",driverPath);
+		
+		baseURI = "https://api.nasa.gov";
+		
+		Response res = null;
+		
+		res = 	given()
+					.pathParam("start_date", startDate)
+					.pathParam("end_date", endDate)
+					.pathParam("api_key", apiKey).
+				when()
+					.get("/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={api_key}");
+		
+		Assert.assertEquals(res.getStatusCode(), 200);
+		
+		String jplUrl = res.getBody().jsonPath().get("near_earth_objects."+startDate.toString()+".nasa_jpl_url");
+		
+		System.out.println("Response Status Code: "+res.getStatusCode());
+		
+		System.out.println("Response Body: "+res.getBody().jsonPath().prettify());
+		
+//		WebDriver driver = new ChromeDriver();
+//		
+//		driver.manage().window().maximize();
+//		
+//		driver.get(jplUrl);
+//		
+//		Thread.sleep(5000);
+//		
+//		driver.quit();
+		
+	}
+	
+}

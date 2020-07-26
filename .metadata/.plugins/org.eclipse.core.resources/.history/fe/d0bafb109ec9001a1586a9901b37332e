@@ -1,0 +1,27 @@
+package authorization;
+
+import org.testng.annotations.Test;
+import io.restassured.response.Response;
+import serialization.Users;
+import static io.restassured.RestAssured.*;
+
+
+public class NASA_APOD {
+
+	 @Test
+	    public void POJO_to_JSON() {
+
+	        baseURI = "https://api.nasa.gov/";
+	    	
+	    	Response response = null;
+
+	        response = 	given()
+	            			.contentType("application/json").
+	            		when()
+	            			.post("/users");
+	        
+	        System.out.println("Response: "+response.asString());
+	        
+	    }
+	
+}

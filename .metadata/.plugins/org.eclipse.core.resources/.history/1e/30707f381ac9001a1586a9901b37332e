@@ -1,0 +1,29 @@
+package serialization;
+
+import org.testng.annotations.Test;
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.*;
+
+
+public class TestDeSerialization {
+
+    @Test
+    public void createUser() {
+
+        baseURI = "http://localhost:3000";
+    	
+    	Response response = null;
+
+        Users user = new Users("Hikaru", "Nakamura", 2727);
+	
+        response = 	given()
+            			.contentType("application/json")
+            			.body(user).
+            		when()
+            			.post("/users");
+        
+        System.out.println("Response: "+response.asString());
+        
+    }
+
+}

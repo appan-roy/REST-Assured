@@ -1,0 +1,9 @@
+package serialization;
+
+public class Students {
+
+	String firstName;
+	
+	
+	
+}
