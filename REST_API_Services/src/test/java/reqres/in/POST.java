@@ -13,11 +13,8 @@ public class POST {
 		String req = "https://reqres.in/api/users";
 		
 		JSONObject json = new JSONObject();
-		
 		json.put("name", "Bobby");
-		
 		json.put("job", "Chess player");
-		
 		System.out.println(json);
 		
 		given()

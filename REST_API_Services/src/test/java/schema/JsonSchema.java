@@ -16,7 +16,8 @@ public class JsonSchema {
     		.get("/users/")
     	.then()
     		.assertThat()
-    		.body(matchesJsonSchemaInClasspath("JsonSchemaFile.json"));	// Add the "JsonSchemaFile.json" file to project classpath i.e., [src/main/java] //
+    		.body(matchesJsonSchemaInClasspath("JsonSchemaFile.json"));	
+    	// Add the "JsonSchemaFile.json" file to project classpath i.e., [src/main/java]
 
     }
 
