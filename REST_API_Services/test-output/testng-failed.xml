@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="simplePayload.DeSerialization">
+      <class name="authentication.OAuth2_Lichess">
         <methods>
-          <include name="JSON_to_POJO"/>
+          <include name="setMyKidModeStatusFalse"/>
         </methods>
-      </class> <!-- simplePayload.DeSerialization -->
+      </class> <!-- authentication.OAuth2_Lichess -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

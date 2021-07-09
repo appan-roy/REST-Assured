@@ -9,9 +9,9 @@ import static io.restassured.RestAssured.*;
 
 public class OAuth2_AuthDemo {
 
-	static String accessToken = "83c56f972e88b8edaacc7856850bc9ac9c99c39b";
+	String accessToken = "83c56f972e88b8edaacc7856850bc9ac9c99c39b";
 	
-	static int userId = 1198;
+	int userId = 1198;
 	
 	@Test
 	public void testChickensFeed() {
