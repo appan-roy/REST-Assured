@@ -5,7 +5,7 @@
     <classes>
       <class name="authentication.OAuth2_Lichess">
         <methods>
-          <include name="setMyKidModeStatusFalse"/>
+          <include name="getOneLeaderboard"/>
         </methods>
       </class> <!-- authentication.OAuth2_Lichess -->
     </classes>

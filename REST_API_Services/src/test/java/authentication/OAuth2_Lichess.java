@@ -1,6 +1,7 @@
 package authentication;
 
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
@@ -11,7 +12,7 @@ public class OAuth2_Lichess {
 
 	String accessToken = "NtVFclFyYg55Pj2b";
 
-	@Test
+	@Ignore@Test
 	public void getMyProfile() {
 
 		baseURI = "https://lichess.org";
@@ -39,7 +40,7 @@ public class OAuth2_Lichess {
 
 	}
 
-	@Test
+	@Ignore@Test
 	public void getMyEmailAddress() {
 
 		baseURI = "https://lichess.org";
@@ -52,7 +53,7 @@ public class OAuth2_Lichess {
 
 	}
 
-	@Test
+	@Ignore@Test
 	public void getMyPreferences() {
 
 		baseURI = "https://lichess.org";
@@ -65,7 +66,7 @@ public class OAuth2_Lichess {
 
 	}
 
-	@Test(priority = 1)
+	@Ignore@Test(priority = 1)
 	public void getMyKidModeStatus() {
 
 		baseURI = "https://lichess.org";
@@ -78,7 +79,7 @@ public class OAuth2_Lichess {
 
 	}
 
-	@Test(priority = 2)
+	@Ignore@Test(priority = 2)
 	public void setMyKidModeStatusTrue() {
 
 		baseURI = "https://lichess.org";
@@ -92,7 +93,7 @@ public class OAuth2_Lichess {
 
 	}
 
-	@Test
+	@Ignore@Test
 	public void getRealTimeUserStatus() {
 
 		baseURI = "https://lichess.org";
@@ -104,6 +105,27 @@ public class OAuth2_Lichess {
 		// validate user status
 		Assert.assertEquals(res.getBody().jsonPath().get("[0].id"), "knightrider90");
 		Assert.assertEquals(res.getBody().jsonPath().get("[0].name"), "KnightRider90");
+
+	}
+
+	@Ignore@Test
+	public void getAllTop10() {
+
+		baseURI = "https://lichess.org";
+
+		Response res = given().auth().oauth2(accessToken).header("Content-Type", "application/vnd.lichess.v3+json")
+				.when().get("/players").then().statusCode(200).and().log().all().extract().response();
+
+	}
+
+	@Test
+	public void getOneLeaderboard() {
+
+		baseURI = "https://lichess.org";
+
+		Response res = given().auth().oauth2(accessToken).header("Content-Type", "application/vnd.lichess.v3+json")
+				.pathParam("nb", 5).pathParam("perfType", "bullet").when().get("/player/top/{nb}/{perfType}").then().statusCode(200)
+				.and().log().all().extract().response();
 
 	}
 
